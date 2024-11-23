@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TodoList.Logic.Interfaces.Repositories;
+using TodoList.Logic.Repositories;
 using TodoList.Models.Context;
 
 namespace TodoList.Extensions;
@@ -12,4 +14,11 @@ public static class RepositoriesRegisterExtension
         return services;
     }
 
+
+    //
+    public static IServiceCollection AddRepositories(this IServiceCollection services)
+    {
+        services.AddScoped<IUserRepository, UserRepository>();
+        return services;
+    }
 }
