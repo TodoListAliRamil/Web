@@ -1,7 +1,11 @@
+using TodoList.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddContext(builder.Configuration);  //редактор
 
 var app = builder.Build();
 
