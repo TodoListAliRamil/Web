@@ -19,6 +19,8 @@ public static class RepositoriesRegisterExtension
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<ITodoRepository, TodoRepository>();
         return services;
     }
 }

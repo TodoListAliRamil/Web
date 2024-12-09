@@ -8,6 +8,8 @@ public static  class ServicesRegisterExtension
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
         services.AddScoped<ICryptoService, CryptoService>();
+        services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IAuthorizationService, UserService>();
         return services;
     }
 }

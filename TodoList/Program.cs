@@ -1,9 +1,18 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using TodoList.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(x => { 
+        x.LoginPath = "/Account/Login";
+        x.Cookie.Name = "TodoList";
+    });
+builder.Services.AddAuthorization();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddContext(builder.Configuration);  //редактор
 builder.Services.AddRepositories();
@@ -24,6 +33,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -6,7 +6,7 @@ public sealed class Todo
 
     public string Name { get; set; } = string.Empty;
 
-    public bool IsEnd { get; set; }
+    public bool IsEnd { get; set; } 
 
     public DateTime DateEnd { get; set; }
 

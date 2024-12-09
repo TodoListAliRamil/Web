@@ -11,7 +11,7 @@ public sealed class UserRepository : IUserRepository
 
     public UserRepository(TodoListContext todoListContext) //конструктор нашего класса
     {
-        _todoListContext = todoListContext;
+        _todoListContext = todoListContext; //сохранение в памяти
     }
 
     public void Add(User user)

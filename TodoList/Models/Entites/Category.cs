@@ -5,8 +5,8 @@ public sealed class Category
     public int Id { get; set; }
 
     public string Name { get; set; } = string.Empty;
-
-    public int UserId { get; set; }
+     
+    public int UserId { get; set; } //соединение с ключом User
 
     public required User User { get; set; } //ссылка на класс User
 
